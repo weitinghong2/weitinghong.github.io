@@ -10,7 +10,7 @@ Squarespace.
 |--------------------------|-----------------------------------------------|
 | `index.html`             | About page (bio, photo, contact)              |
 | `research.html`          | Papers, with abstracts and links              |
-| `code-data.html`         | Replication packages, datasets, software      |
+| `code-data.html`         | Template for code/data; not linked in the nav yet |
 | `404.html`               | Shown for missing URLs                        |
 | `assets/css/style.css`   | All styling (colors and fonts are at the top) |
 | `assets/img/`            | Photo and favicon                             |
@@ -106,11 +106,17 @@ git commit -m "Update CV"
 git push
 ```
 
-GitHub republishes in about a minute. To update your CV, replace
-`files/Hong_CV.pdf` with a file of the same name.
+GitHub republishes in about a minute.
+
+To update your CV, replace `files/Hong_CV.pdf` with a file of the same name.
+The copy here is compiled from `Dropbox\CV\Hong, Weiting - CV.tex` with the
+home address and phone number removed. Remove them again in any new version
+before publishing it.
 
 ## Sharing code and data
 
+- **Page:** fill in `code-data.html`, then add
+  `<a href="code-data.html">Code &amp; Data</a>` to the `<nav>` in every page.
 - **Code:** keep each project in its own GitHub repository and link it from
   `code-data.html`.
 - **Data:** GitHub rejects files over 100 MB and recommends keeping
