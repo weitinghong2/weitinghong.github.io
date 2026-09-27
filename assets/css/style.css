@@ -1,0 +1,189 @@
+/* ------------------------------------------------------------
+   Personal academic site — single stylesheet.
+   To restyle the whole site, start with the variables below.
+   ------------------------------------------------------------ */
+
+:root {
+  --accent: #00356b;          /* Yale blue */
+  --accent-soft: #e8eef6;
+  --text: #1f2328;
+  --muted: #5b636d;
+  --bg: #ffffff;
+  --border: #e3e6ea;
+
+  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+               "Helvetica Neue", Arial, sans-serif;
+  --font-head: "Iowan Old Style", "Palatino Linotype", Palatino,
+               Georgia, "Times New Roman", serif;
+
+  --width: 46rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --accent: #8cb8ea;
+    --accent-soft: #1c2733;
+    --text: #e6e8eb;
+    --muted: #9aa3ad;
+    --bg: #111418;
+    --border: #2a3038;
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: var(--text);
+  background: var(--bg);
+}
+
+.wrap {
+  max-width: var(--width);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+a { color: var(--accent); text-underline-offset: 0.18em; }
+a:hover { text-decoration-thickness: 2px; }
+
+h1, h2, h3 {
+  font-family: var(--font-head);
+  font-weight: 600;
+  line-height: 1.25;
+}
+h1 { font-size: 2.1rem; margin: 0 0 0.25rem; }
+h2 {
+  font-size: 1.35rem;
+  margin: 2.5rem 0 1rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid var(--border);
+}
+h3 { font-size: 1.1rem; margin: 0 0 0.2rem; }
+
+/* ---------- Header / nav ---------- */
+
+.site-header {
+  border-bottom: 1px solid var(--border);
+}
+.site-header .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem 1.5rem;
+  padding-top: 1.1rem;
+  padding-bottom: 1.1rem;
+}
+.site-title {
+  font-family: var(--font-head);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text);
+  text-decoration: none;
+}
+.site-header nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.25rem;
+  font-size: 0.95rem;
+}
+.site-header nav a {
+  color: var(--muted);
+  text-decoration: none;
+}
+.site-header nav a:hover,
+.site-header nav a[aria-current="page"] {
+  color: var(--accent);
+}
+
+main.wrap { padding-top: 2.5rem; padding-bottom: 3rem; }
+
+/* ---------- Home page intro ---------- */
+
+.intro {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.portrait {
+  flex: none;
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.role { margin: 0 0 0.9rem; color: var(--muted); }
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 560px) {
+  .intro { flex-direction: column; align-items: flex-start; gap: 1.25rem; }
+  .portrait { width: 140px; height: 140px; }
+  h1 { font-size: 1.8rem; }
+}
+
+/* ---------- Papers / projects ---------- */
+
+.entry { margin: 0 0 1.75rem; }
+.entry .meta { margin: 0; color: var(--muted); font-size: 0.95rem; }
+.entry .status { font-style: italic; }
+
+.entry-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.5rem;
+  margin: 0.45rem 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.85rem;
+}
+.entry-links a,
+.entry summary {
+  display: inline-block;
+  padding: 0.05rem 0.55rem;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--accent);
+  text-decoration: none;
+}
+.entry-links a:hover,
+.entry summary:hover { background: var(--accent-soft); }
+
+.entry details { margin-top: 0.45rem; font-size: 0.85rem; }
+.entry summary {
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+}
+.entry summary::-webkit-details-marker { display: none; }
+.entry summary::before { content: "+ "; }
+.entry details[open] summary::before { content: "\2212  "; }
+.entry details p {
+  margin: 0.6rem 0 0;
+  font-size: 0.95rem;
+  color: var(--text);
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+.site-footer .wrap { padding-top: 1.25rem; padding-bottom: 2rem; }
