@@ -16,7 +16,7 @@
   --font-head: "Iowan Old Style", "Palatino Linotype", Palatino,
                Georgia, "Times New Roman", serif;
 
-  --width: 46rem;
+  --width: 56.25rem;          /* 900px */
 }
 
 @media (prefers-color-scheme: dark) {
