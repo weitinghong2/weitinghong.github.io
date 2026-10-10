@@ -142,7 +142,8 @@ main.wrap { padding-top: 2.5rem; padding-bottom: 3rem; }
 .entry { margin: 0 0 1.75rem; }
 .entry .meta { margin: 0; color: var(--muted); font-size: 0.95rem; }
 .entry .status { font-style: italic; }
-.entry .conf { margin: 0.15rem 0 0; color: var(--muted); font-size: 0.85rem; }
+.entry .conf,
+.entry .methods { margin: 0.15rem 0 0; color: var(--muted); font-size: 0.85rem; }
 
 .entry-links {
   display: flex;
